@@ -1,2 +1,13 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="row jumbotron bg-secondary">
+    <h1 class="col-md-8 offset-2 text-center text-white border border-white pt-5 pb-5 rounded-sm">Scraped Articles</h1>
+</div>
+
+<div class="row bg-secondary mt-4 mb-4">
+    <div class="col-md-8 offset-2 border border-secondary rounded-sm pb-5 bg-white">
+    {{#each articles}}
+     <h3 class="pt-5"><a>{{this.title}}</a></h3>
+     {{this.summary}}<br>
+     <button class="btn btn-block btn-info" href="/articles/saveArticle/{{this._id}}">Save Me</button>
+    {{/each}}
+    </div>
+</div>
